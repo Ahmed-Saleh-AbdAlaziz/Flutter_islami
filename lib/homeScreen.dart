@@ -1,0 +1,14 @@
+
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  static const String routName="Home";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Welcome to Home Screen!'),
+      ),
+    );
+  }
+}
