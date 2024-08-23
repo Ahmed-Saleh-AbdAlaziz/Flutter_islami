@@ -18,7 +18,8 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
     var provider = Provider.of<AppProvider>(context);
 
     return Container(
-      margin: EdgeInsets.all(15),
+      color: provider.isDarkMode()?AppColor.primaryDark_Color:AppColor.primaryLight_Color,
+           padding: EdgeInsets.all(15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -50,15 +51,16 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         Text(text,
             style: Theme.of(context)
                 .textTheme
-                .bodyMedium!
-                .copyWith(color: AppColor.primaryLight_Color)),
-        Icon(Icons.check)
+                .bodySmall!.copyWith(
+              color: AppColor.whiteColor
+            )),
+        Icon(Icons.check,color: Colors.white,)
       ],
     );
   }
 
   getUnSelectedItemWidget(String text){
     return  Text(text,
-        style: Theme.of(context).textTheme.bodyMedium);
+        style: Theme.of(context).textTheme.bodySmall);
   }
 }
